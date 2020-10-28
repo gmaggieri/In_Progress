@@ -1,0 +1,14 @@
+{
+  "name": "portfolio_v2",
+  "version": "1.0.0",
+  "description": "In progress page of my new website",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Guilherme Maggieri",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

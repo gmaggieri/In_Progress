@@ -1,0 +1,29 @@
+
+.header {
+    height: 100vh;
+    background-color: $color-main-background;
+}
+
+.heading-box {
+    z-index: 40;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.square {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 702px;
+    height: 687px;
+    background-color: $color-square;
+    transform: translate(-50%, -50%);    
+}
+
+.description {
+    position: relative;
+    display: block;
+    z-index: 2;
+}
