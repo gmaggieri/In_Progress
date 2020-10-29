@@ -50,6 +50,18 @@
         width: calc( 2* (100% - 8 * #{$gutter-horizontal}) /9 + #{$gutter-horizontal});
       }
 
+    .col-4-of-9 {
+        width: calc(
+          4 * (100% - 3 * #{$gutter-horizontal}) / 9 + #{$gutter-horizontal}
+        );
+      }
+    
+      .col-5-of-9 {
+        width: calc(
+          5 * (100% - 3 * #{$gutter-horizontal}) / 9 + #{$gutter-horizontal}
+        );
+      }
+    
       .col-6-of-9 {
         width: calc(
           6 * (100% - 2 * #{$gutter-horizontal}) / 9 + #{$gutter-horizontal}
