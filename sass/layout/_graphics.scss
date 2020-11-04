@@ -4,7 +4,13 @@
     height: 68.7rem;
     background-color: $color-square;
     
-    @include absoluteCenter;    
+    @include absoluteCenter;
+    
+    @include respond(phone) {
+        width: 64%;
+        height: 44%;
+        border-radius: 0 30% 0 30%;
+    }
 }
 
 .section-shapes {
@@ -12,8 +18,7 @@
     padding: 2rem;
     
     &__container {
-        position: relative;
-        
+        position: relative;        
         top: 50%;
         transform: translateY(-50%);
     }
@@ -21,13 +26,13 @@
     &__rectangle {
         position: relative;
         width: 100%;
-        height: 60vh;
+        height: 50vh;
         outline: 0.1rem solid rgba($color-light-gray, $alpha: 1.0);
     }
 
     &__rectangle2 {
         position: relative;
-        width:calc( 100% + #{$gutter-horizontal};);
+        width:calc(100% + #{$gutter-horizontal});
         height: 80vh;
         outline: 0.1rem solid rgba($color-light-gray, $alpha: 1.0);
     }  
@@ -36,13 +41,12 @@
         
         position: relative;
         outline: 0.1rem solid rgba($color-light-gray, $alpha: 1.0);
-        
         width: 100%;
-        height: 20vh;
+        height: 30vh;
     }
 
     &__circle{
-        position: relative;
+        position: absolute;
         width: 45rem;
         height: 45rem;
         border-radius: 100%;
@@ -51,6 +55,35 @@
         left: 50%;
         transform: translateX(-50%);
         float: left;
+    }
+}
+
+.gradient{
+    &__container{
+        width: 90vw;
+        height: 100vh;
+
+        &--img{
+            width: 100%;
+            height: 65%;
+            /* display: block; */
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(../../img/Gradient-oval.png);
+            background-position: top;
+            
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include respond(phone) {
+                width: 65%;
+                
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -50%);  
+            }
+        }
     }
 
 }

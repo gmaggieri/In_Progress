@@ -1,12 +1,51 @@
+@charset "UTF-8";
+/*
+0 - 600px: Phone
+600 - 900px: Tablet Portrait
+900 - 1200px: Tablet Landscape
+1200-1800px: Current
++1800px: Big Desktop
+*/
+/*
+$breakpoint argument choices:
+• phone
+• tab-port
+• tab-land
+• big-desktop
+*/
+/* 
+1em = 16px 
+
+SizeInPixels / 16 = SizeInEm
+
+em's are the best units to use on media queries
+*/
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0 0.1rem 0 0.1rem;
   box-sizing: inherit; }
+  @media (max-width: 37.5em) {
+    *,
+    *::after,
+    *::before {
+      padding: 0 0.3rem 0 0.3rem; } }
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 43.75%; } }
 
 body {
   box-sizing: border-box;
@@ -22,14 +61,26 @@ h1 {
   font-weight: 700;
   line-height: 13rem;
   font-size: 13.5rem; }
+  @media (max-width: 56.25em) {
+    h1 {
+      font-size: 11rem;
+      line-height: 13.2rem; } }
+  @media (max-width: 37.5em) {
+    h1 {
+      font-size: 6.4rem;
+      line-height: 5.5rem; } }
 
 p {
-  font-size: 20px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 2.4rem;
   letter-spacing: 0em;
   text-align: left; }
+  @media (max-width: 37.5em) {
+    p {
+      font-size: 1.2rem;
+      line-height: 1.9rem; } }
 
 .row {
   max-width: 140rem;
@@ -44,6 +95,13 @@ p {
     float: left; }
     .row [class*="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 37.5em) {
+        .row [class*="col-"]:not(:last-child) {
+          margin-right: 2.4rem;
+          margin-bottom: 2.4rem; } }
+  @media (max-width: 37.5em) {
+    .row {
+      width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -58,14 +116,20 @@ p {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
   .row .col-1-of-9 {
     width: calc((100% - 8 * 6rem) /9); }
+    @media (max-width: 37.5em) {
+      .row .col-1-of-9 {
+        display: none; } }
   .row .col-2-of-9 {
-    width: calc( 2* (100% - 8 * 6rem) /9 + 6rem); }
+    width: calc( 2 * (100% - 8 * 6rem) /9 + 6rem); }
+    @media (max-width: 37.5em) {
+      .row .col-2-of-9 {
+        width: 31%; } }
   .row .col-4-of-9 {
-    width: calc( 4 * (100% - 3 * 6rem) / 9 + 6rem); }
+    width: calc(4 * (100% - 3 * 6rem) / 9 + 6rem); }
   .row .col-5-of-9 {
-    width: calc( 5 * (100% - 3 * 6rem) / 9 + 6rem); }
+    width: calc(5 * (100% - 3 * 6rem) / 9 + 6rem); }
   .row .col-6-of-9 {
-    width: calc( 6 * (100% - 2 * 6rem) / 9 + 6rem); }
+    width: calc(6 * (100% - 2 * 6rem) / 9 + 6rem); }
 
 .header {
   display: block;
@@ -93,6 +157,11 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+  @media (max-width: 37.5em) {
+    .square {
+      width: 64%;
+      height: 44%;
+      border-radius: 0 30% 0 30%; } }
 
 .section-shapes {
   padding: 2rem; }
@@ -103,20 +172,20 @@ p {
   .section-shapes__rectangle {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     outline: 0.1rem solid #c4c4c4; }
   .section-shapes__rectangle2 {
     position: relative;
-    width: calc( 100% + 6rem);
+    width: calc(100% + 6rem);
     height: 80vh;
     outline: 0.1rem solid #c4c4c4; }
   .section-shapes__square {
     position: relative;
     outline: 0.1rem solid #c4c4c4;
     width: 100%;
-    height: 20vh; }
+    height: 30vh; }
   .section-shapes__circle {
-    position: relative;
+    position: absolute;
     width: 45rem;
     height: 45rem;
     border-radius: 100%;
@@ -124,6 +193,27 @@ p {
     left: 50%;
     transform: translateX(-50%);
     float: left; }
+
+.gradient__container {
+  width: 90vw;
+  height: 100vh; }
+  .gradient__container--img {
+    width: 100%;
+    height: 65%;
+    /* display: block; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../../img/Gradient-oval.png);
+    background-position: top;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+    @media (max-width: 37.5em) {
+      .gradient__container--img {
+        width: 65%;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%); } }
 
 .section-shapes {
   display: block;
