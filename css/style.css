@@ -64,11 +64,11 @@ h1 {
   @media (max-width: 56.25em) {
     h1 {
       font-size: 11rem;
-      line-height: 13.2rem; } }
+      line-height: 10.2rem; } }
   @media (max-width: 37.5em) {
     h1 {
       font-size: 6.4rem;
-      line-height: 5.5rem; } }
+      line-height: 6rem; } }
 
 p {
   font-size: 2rem;
@@ -79,14 +79,20 @@ p {
   text-align: left; }
   @media (max-width: 37.5em) {
     p {
-      font-size: 1.2rem;
+      font-size: 2rem;
       line-height: 1.9rem; } }
+
+a {
+  font-size: 1.2rem;
+  font-weight: 400; }
 
 .row {
   max-width: 140rem;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 10rem; }
+  .row:first-child {
+    top: 10vh; }
   .row::after {
     content: "";
     display: table;
@@ -130,6 +136,19 @@ p {
     width: calc(5 * (100% - 3 * 6rem) / 9 + 6rem); }
   .row .col-6-of-9 {
     width: calc(6 * (100% - 2 * 6rem) / 9 + 6rem); }
+  .row__top {
+    position: relative;
+    top: -10vh; }
+    .row__top .col-1-of-9 {
+      width: calc((100% - 8 * 6rem) /9); }
+      @media (max-width: 37.5em) {
+        .row__top .col-1-of-9 {
+          display: none; } }
+    .row__top .col-2-of-9 {
+      width: calc( 2 * (100% - 8 * 6rem) /9 + 6rem); }
+      @media (max-width: 37.5em) {
+        .row__top .col-2-of-9 {
+          width: 31%; } }
 
 .header {
   display: block;
@@ -157,11 +176,16 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+  @media (max-width: 75em) {
+    .square {
+      width: 64%;
+      height: 44%;
+      border-radius: 0 50% 0 0; } }
   @media (max-width: 37.5em) {
     .square {
       width: 64%;
       height: 44%;
-      border-radius: 0 30% 0 30%; } }
+      border-radius: 0 50% 0 50%; } }
 
 .section-shapes {
   padding: 2rem; }
@@ -174,16 +198,26 @@ p {
     width: 100%;
     height: 50vh;
     outline: 0.1rem solid #c4c4c4; }
-  .section-shapes__rectangle2 {
+    @media (max-width: 37.5em) {
+      .section-shapes__rectangle {
+        display: none; } }
+  .section-shapes__rectangle-big {
     position: relative;
     width: calc(100% + 6rem);
     height: 80vh;
     outline: 0.1rem solid #c4c4c4; }
+    @media (max-width: 37.5em) {
+      .section-shapes__rectangle-big {
+        height: 50vh;
+        width: calc(50vw - 6rem); } }
   .section-shapes__square {
     position: relative;
     outline: 0.1rem solid #c4c4c4;
     width: 100%;
     height: 30vh; }
+    @media (max-width: 37.5em) {
+      .section-shapes__square {
+        display: none; } }
   .section-shapes__circle {
     position: absolute;
     width: 45rem;
@@ -218,3 +252,7 @@ p {
 .section-shapes {
   display: block;
   height: 100vh; }
+
+a {
+  text-decoration: none;
+  color: #CBCBCB; }
